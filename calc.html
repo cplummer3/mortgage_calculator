@@ -1,0 +1,140 @@
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+	<script src="calc.js" type="text/javascript"></script>
+	<link type="text/css" href="calc.css" rel="stylesheet">
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,700,300&subset=latin,greek' rel='stylesheet' type='text/css'>
+</head>
+<body>
+<div id="mortgage_calculator">
+
+	<h3>Mortgage Calculator</h3>
+	
+	<div id="mc_navbar">
+		<div class="mc_button active" id="mc_btn_monthly">
+			<a onClick="showMonthly()">
+				Monthly Cost
+			</a>
+		</div>
+		<div class="mc_button" id="mc_btn_max">
+			<a onClick="showMax()">
+				Maximum Loan
+			</a>
+		</div>
+	</div>
+	
+	
+	<div id="mc_monthly_cost">
+		<div class="mc_table">
+			<div class="mc_table_row mc_top">
+				<div class="mc_table_cell">
+					Mortgage Amount ($)
+				</div>
+				<div class="mc_table_cell">
+					Interest Rate (%)
+				</div>
+				<div class="mc_table_cell">
+					Mortgage Period (years)
+				</div>
+			</div>
+			<div class="mc_table_row">
+				<div class="mc_table_cell">
+					<div class="dollar_sign">$</div>
+					<input class="numeric" type="text" id="mort_amount" value="100,000" onChange="calculate_mortgage()">
+				</div>
+				<div class="mc_table_cell">
+					<input type="text" id="interest_rate" value="3.92" onChange="calculate_mortgage()">
+				</div>
+				<div class="mc_table_cell">
+					<select id="mort_period" onChange="calculate_mortgage()">
+						<option value="10">10</option>
+						<option value="15">15</option>
+						<option value="20">20</option>
+						<option value="25">25</option>
+						<option value="30" selected>30</option>
+						<option value="35">35</option>
+						<option value="40">40</option>
+					</select>
+				</div>
+			</div>
+			<div class="mc_table_row mc_bottom">
+				<div class="mc_table_cell span_two">
+					Total Cost of Mortgage
+				</div>
+				<div class="mc_table_cell mc_spacer">
+				</div>
+				<div class="mc_table_cell numeric" id="total_mort">
+					<!-- Display jQuery Total_Mort -->
+				</div>
+			</div>
+			<div class="mc_table_row mc_bottom mc_bold">
+				<div class="mc_table_cell span_two">
+					Monthly Payments
+				</div>
+				<div class="mc_table_cell mc_spacer">
+				</div>
+				<div class="mc_table_cell numeric" id="total_monthly">
+					<!-- Display jQuery Total_Monthly -->
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	
+	<div id="mc_maximum_loan" style="display:none;">
+		<div class="mc_table">
+			<div class="mc_table_row mc_top">
+				<div class="mc_table_cell">
+					Monthly Payments ($)
+				</div>
+				<div class="mc_table_cell">
+					Interest Rate (%)
+				</div>
+				<div class="mc_table_cell">
+					Mortgage Period (years)
+				</div>
+			</div>
+			<div class="mc_table_row">
+				<div class="mc_table_cell">
+					<div class="dollar_sign">$</div>
+					<input class="numeric" type="text" id="monthly_amount" onChange="calculate_borrow()" value="473">
+				</div>
+				<div class="mc_table_cell">
+					<input type="text" id="interest_rate_borrow" onChange="calculate_borrow()" value="3.92">
+				</div>
+				<div class="mc_table_cell">
+					<select id="mort_period_borrow" onChange="calculate_borrow()">
+						<option value="10">10</option>
+						<option value="15">15</option>
+						<option value="20">20</option>
+						<option value="25">25</option>
+						<option value="30" selected>30</option>
+						<option value="35">35</option>
+						<option value="40">40</option>
+					</select>
+				</div>
+			</div>
+			<div class="mc_table_row mc_bottom">
+				<div class="mc_table_cell span_two">
+					Total Cost of Mortgage
+				</div>
+				<div class="mc_table_cell mc_spacer">
+				</div>
+				<div class="mc_table_cell numeric" id="total_mort_borrow">
+					<!-- Display jQuery Total_Mort -->
+				</div>
+			</div>
+			<div class="mc_table_row mc_bottom mc_bold">
+				<div class="mc_table_cell span_two">
+					You Could Borrow
+				</div>
+				<div class="mc_table_cell mc_spacer">
+				</div>
+				<div class="mc_table_cell numeric" id="total_monthly_borrow">
+					<!-- Display jQuery Total_Borrow -->
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+

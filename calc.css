@@ -1,0 +1,142 @@
+/* CSS Document */
+#mortgage_calculator {
+	max-width:625px;
+	min-width:275px;
+	margin:50px auto;
+	border: 2px solid #5b6f90;
+	box-shadow:5px 5px 10px;
+	font-family: 'Roboto', sans-serif;
+	color:#4f4f4f;
+}
+#mortgage_calculator h3 {
+	margin:10px 20px;
+}
+
+/* NavBar */
+
+#mc_navbar {
+	display:inline-flex;
+	width:100%;
+	border-bottom:1px solid #979EA4;
+}
+
+.mc_button {
+	width:50%;
+	text-align:center;
+}
+.mc_button a{
+	cursor:pointer;
+	width:100%;
+	display:inline-block;
+	padding:15px 0px;
+	font-weight: 700;
+}
+#mc_navbar .active {
+	border-bottom:3px solid #8bac65;
+}
+#mc_navbar .active a{
+	color:#8bac65;
+}
+
+/* MC Content */
+
+.mc_table {
+	display:table;
+	width:100%;
+}
+.mc_table_row {
+	display:table-row;
+	background-color:#eff1f5;
+	width:100%;
+}
+.mc_bottom {
+	background-color:transparent;
+}
+.mc_table_cell {
+	display:table-cell;
+	padding:10px 20px;;
+}
+.mc_table_cell input[type="text"] {
+	background-color:transparent;
+	border:none;
+	border-bottom:2px solid #47484D;
+	padding-bottom:4px;
+	font-size:18px;
+	max-width:160px;
+	color:#6d6e70;
+}
+.mc_top .mc_table_cell{
+	padding-bottom:0px;
+}
+#mort_amount, #monthly_amount {
+	max-width:145px;
+	padding-left:20px;
+}
+#mort_period, #mort_period_borrow {
+	width:100%;
+	max-width:160px;
+	background-color:transparent;	
+	-webkit-appearance: none;
+ 	-moz-appearance: none;
+ 	appearance: none;
+	background-image:url(images/arrow.png);
+	background-position:right;
+	background-repeat:no-repeat;
+	border:none;
+	color:#6d6e70;
+	font-size:18px;
+	border-bottom:2px solid #47484D;
+	padding-bottom:4px;
+}
+.dollar_sign {
+	position:absolute;
+}
+.mc_bold {
+	font-weight:bold;
+}
+
+@media screen and (max-width:635px){
+	.mc_table_row {
+		display:block;
+		float:left;
+		width:50%;	
+	}
+	.mc_table_cell, .mc_top .mc_table_cell {
+		display:block;
+		min-height:35px;
+		padding:10px 20px;
+	}
+	.mc_border {
+		border:none;
+	}
+	.mc_spacer {
+		display:none;
+	}
+}
+@media screen and (max-width:470px){
+	.mc_table {
+		font-size:11px;	
+	}
+	.mc_table_cell input[type="text"]{
+		width:100%;
+		font-size:14px;
+	}
+	#mort_period, #mort_period_borrow {
+		width:100%;
+		font-size:14px;
+	}
+	#mort_amount, #monthly_amount {
+		padding-left:0px;
+		max-width:inherit;
+	}
+	.dollar_sign {
+		display:none;
+	}
+	.mc_table_cell, .mc_top .mc_table_cell {
+		padding:8px;
+	}
+	.mc_bottom .mc_table_cell {
+		min-height:20px;
+	}
+}
+
